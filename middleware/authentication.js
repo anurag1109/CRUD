@@ -9,11 +9,11 @@ const authenticate = (req, res, next) => {
         req.body.user = decoded.userId;
         next();
       } else {
-        res.status(200).send("Please login first");
+        res.status(200).send({ msg: "Please login first" });
       }
     });
   } else {
-    res.status(200).send("Please login first");
+    res.status(200).send({ msg: "Please login first" });
   }
 };
 

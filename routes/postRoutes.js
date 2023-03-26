@@ -2,10 +2,8 @@ const express = require("express");
 const postrouter = express.Router();
 postrouter.use(express.json());
 const jwt = require("jsonwebtoken");
-
 const { authenticate } = require("../middleware/authentication");
 const { postModel } = require("../models/model");
-
 postrouter.get("/", authenticate, async (req, res) => {
   let query = req.query;
   const token = req.headers.authorization;
@@ -85,5 +83,4 @@ postrouter.delete("/delete/:id", authenticate, async (req, res) => {
     }
   });
 });
-
 module.exports = { postrouter };
