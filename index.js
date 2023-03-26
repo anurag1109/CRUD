@@ -19,12 +19,12 @@ app.get("/", async (req, res) => {
 app.use("/users", userrouter);
 app.use("/posts", postrouter);
 
-app.listen(process.env.port, async (req, res) => {
+app.listen(4500, async (req, res) => {
   try {
     await connection;
     console.log("connected to mongodb");
   } catch (err) {
     console.log(err);
   }
-  console.log(`server running at port ${process.env.port}`);
+  console.log(`server running at port 4500`);
 });
